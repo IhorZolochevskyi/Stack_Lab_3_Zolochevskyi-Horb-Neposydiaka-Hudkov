@@ -1,4 +1,5 @@
 using ClassLib;
+using System;
 namespace mainForm
 {
     public partial class Form1 : Form
@@ -30,16 +31,14 @@ namespace mainForm
         private void employeeShowButton_Click(object sender, EventArgs e)
         {
 
-            var employees = _db.Employees
-     .Select(e => new
-     {
-         e.Id,
-         e.Name,
-         e.Age,
-         e.Expirience,
-         DepartmentName = e.Department.Name 
-     })
-     .ToList();
+            var employees = _db.Employees.Select(e => new
+            {
+                e.Id,
+                e.Name,
+                e.Age,
+                e.Expirience,
+                DepartmentName = e.Department.Name
+            }).ToList();
             dataGridView1.DataSource = employees;
         }
 
@@ -49,6 +48,27 @@ namespace mainForm
             {
                 MessageBox.Show("Enter a valid ID!", "Error");
                 return;
+            }
+            if (radioButtonDF.Checked)
+            {
+
+                var department = _db.Departments.FirstOrDefault(d => d.Id == int.Parse(textBox4.Text));
+                if (department == null)
+                {
+                    MessageBox.Show("Department not found!", "Error");
+                    return;
+                }
+                MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+                if (MessageBox.Show("ARE U SURE?!\n U WILL DELETE ALL WORKERS OF THIS DEPARTMENT", "Clear database", messageBoxButtons) == DialogResult.No)
+                {
+                    return;
+                }
+                _db.Departments.Remove(department);
+                _db.SaveChanges();
+                dataGridView1.DataSource = null;
+                dataGridView1.Refresh();
+                var departments = _db.Departments.ToList();
+                dataGridView1.DataSource = departments;
             }
             if (radioButtonDF2.Checked)
             {
@@ -60,17 +80,17 @@ namespace mainForm
                 }
                 _db.Employees.Remove(employee);
                 _db.SaveChanges();
-            }
-            if (radioButtonDF.Checked)
-            {
-                var department = _db.Departments.FirstOrDefault(d => d.Id == int.Parse(textBox4.Text));
-                if (department == null)
+                dataGridView1.DataSource = null;
+                dataGridView1.Refresh();
+                var employees = _db.Employees.Select(e => new
                 {
-                    MessageBox.Show("Department not found!", "Error");
-                    return;
-                }
-                _db.Departments.Remove(department);
-                _db.SaveChanges();
+                    e.Id,
+                    e.Name,
+                    e.Age,
+                    e.Expirience,
+                    DepartmentName = e.Department.Name
+                }).ToList();
+                dataGridView1.DataSource = employees;
             }
             if (!radioButtonDF.Checked && !radioButtonDF2.Checked)
             {
@@ -85,17 +105,7 @@ namespace mainForm
                 MessageBox.Show("Enter a valid ID!", "Error");
                 return;
             }
-            if (radioButtonDF2.Checked)
-            {
-                var employee = _db.Employees.FirstOrDefault(e => e.Id == int.Parse(textBox4.Text));
-                if (employee == null)
-                {
-                    MessageBox.Show("Employee not found!", "Error");
-                    return;
-                }
-                dataGridView1.DataSource = new List<Employee> { employee };
-            }
-            if (radioButtonDF.Checked) 
+            if (radioButtonDF.Checked)
             {
                 var department = _db.Departments.FirstOrDefault(d => d.Id == int.Parse(textBox4.Text));
                 if (department == null)
@@ -106,7 +116,17 @@ namespace mainForm
                 var employees = _db.Employees
                     .Where(e => e.DepartmentId == department.Id)
                     .ToList();
-                dataGridView1.DataSource = department;
+                dataGridView1.DataSource = new List<Department> { department };
+            }
+            if (radioButtonDF2.Checked)
+            {
+                var employee = _db.Employees.FirstOrDefault(e => e.Id == int.Parse(textBox4.Text));
+                if (employee == null)
+                {
+                    MessageBox.Show("Employee not found!", "Error");
+                    return;
+                }
+                dataGridView1.DataSource = new List<Employee> { employee };
             }
             if (!radioButtonDF.Checked && !radioButtonDF2.Checked)
             {
@@ -134,7 +154,7 @@ namespace mainForm
                     Age = int.Parse(intTextBox.Text),
                     Expirience = int.Parse(textBox3.Text),
                     DepartmentId = selectedDepartment.Id,
-                    Department = selectedDepartment 
+                    Department = selectedDepartment
                 };
                 _db.Employees.Add(employee);
                 _db.SaveChanges();
@@ -177,7 +197,9 @@ namespace mainForm
 
             dataGridView1.DataSource = null;
             dataGridView1.Refresh();
-
+            //string path = "D:\\!Igor\\!University\\!3 kurs\\1 semestr\\Стек\\TeamProjects\\Lab_3\\mainForm\\bin\\Debug\\net8.0-windows/Lab3DB.db";
+            //File.Delete(path);
+            //this.Close();
         }
     }
 }
