@@ -25,11 +25,11 @@ namespace mainForm
         }
         private void departmentShowButton_Click(object sender, EventArgs e)
         {
-                // ѕолучаем список работников из базы данных
-                var departments = _db.Departments.ToList();
+            // ѕолучаем список работников из базы данных
+            var departments = _db.Departments.ToList();
 
-                // ѕрив€зываем список работников к DataGridView
-                dataGridView1.DataSource = departments;
+            // ѕрив€зываем список работников к DataGridView
+            dataGridView1.DataSource = departments;
         }
 
         private void employeeShowButton_Click(object sender, EventArgs e)
@@ -62,7 +62,7 @@ namespace mainForm
 
         private void addButton_Click(object sender, EventArgs e)
         {
-           
+
             if (departmenRadioButton.Checked)
             {
                 Department department = new Department { Name = NameTextBox.Text };
@@ -70,7 +70,7 @@ namespace mainForm
                 _db.SaveChanges();
                 LoadDepartments();
             }
-            if(employeeRadioButton.Checked)
+            if (employeeRadioButton.Checked)
             {
                 var selectedDepartment = _db.Departments
             .FirstOrDefault(d => d.Id == (int)comboBox1.SelectedValue);
@@ -109,6 +109,21 @@ namespace mainForm
             intTextBox.Show();
             textBox3.Show();
             comboBox1.Show();
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+            if (MessageBox.Show("ARE U SURE?!", "Clear database", messageBoxButtons) == DialogResult.No)
+            {
+                return;
+            }
+            MessageBox.Show("Database cleared!");
+            _db.ClearDatabase();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Refresh();
+
         }
     }
 }

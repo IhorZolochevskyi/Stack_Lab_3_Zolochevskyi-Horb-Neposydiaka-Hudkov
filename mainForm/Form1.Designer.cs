@@ -46,6 +46,7 @@
             departmentShowButton = new Button();
             employeeShowButton = new Button();
             comboBox1 = new ComboBox();
+            ClearButton = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -217,11 +218,24 @@
             comboBox1.Size = new Size(100, 23);
             comboBox1.TabIndex = 18;
             // 
+            // ClearButton
+            // 
+            ClearButton.BackColor = SystemColors.InfoText;
+            ClearButton.ForeColor = SystemColors.ButtonFace;
+            ClearButton.Location = new Point(488, 264);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(118, 23);
+            ClearButton.TabIndex = 19;
+            ClearButton.Text = "CLEAR DATABASE";
+            ClearButton.UseVisualStyleBackColor = false;
+            ClearButton.Click += ClearButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(618, 312);
+            Controls.Add(ClearButton);
             Controls.Add(comboBox1);
             Controls.Add(employeeShowButton);
             Controls.Add(departmentShowButton);
@@ -267,5 +281,6 @@
         private Button departmentShowButton;
         private Button employeeShowButton;
         private ComboBox comboBox1;
+        private Button ClearButton;
     }
 }
