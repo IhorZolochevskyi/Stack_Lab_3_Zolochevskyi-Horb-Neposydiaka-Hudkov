@@ -45,7 +45,18 @@ namespace mainForm
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
+            if (radioButtonDF.Checked)
+            {
 
+            }
+            if (radioButtonDF2.Checked)
+            {
+
+            }
+            if(!radioButtonDF.Checked||!radioButtonDF2.Checked)
+            {
+                MessageBox.Show("Select option!", "Error");
+            }
         }
 
         private void findButton_Click(object sender, EventArgs e)
