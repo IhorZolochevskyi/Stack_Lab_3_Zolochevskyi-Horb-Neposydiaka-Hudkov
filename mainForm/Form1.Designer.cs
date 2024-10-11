@@ -53,9 +53,10 @@
             // dataGridLabel
             // 
             dataGridLabel.AutoSize = true;
-            dataGridLabel.Location = new Point(113, 9);
+            dataGridLabel.Font = new Font("Segoe UI", 15F);
+            dataGridLabel.Location = new Point(152, 27);
             dataGridLabel.Name = "dataGridLabel";
-            dataGridLabel.Size = new Size(25, 15);
+            dataGridLabel.Size = new Size(41, 28);
             dataGridLabel.TabIndex = 0;
             dataGridLabel.Text = "List";
             // 
@@ -142,19 +143,21 @@
             // inputLabel
             // 
             inputLabel.AutoSize = true;
-            inputLabel.Location = new Point(403, 9);
+            inputLabel.Font = new Font("Segoe UI", 12F);
+            inputLabel.Location = new Point(384, 27);
             inputLabel.Name = "inputLabel";
-            inputLabel.Size = new Size(70, 15);
+            inputLabel.Size = new Size(94, 21);
             inputLabel.TabIndex = 10;
             inputLabel.Text = "Enter values";
             // 
             // indexLabel
             // 
             indexLabel.AutoSize = true;
-            indexLabel.Location = new Point(530, 9);
+            indexLabel.Font = new Font("Segoe UI", 12F);
+            indexLabel.Location = new Point(509, 27);
             indexLabel.Name = "indexLabel";
             indexLabel.RightToLeft = RightToLeft.No;
-            indexLabel.Size = new Size(66, 15);
+            indexLabel.Size = new Size(87, 21);
             indexLabel.TabIndex = 11;
             indexLabel.Text = "Enter index";
             // 
