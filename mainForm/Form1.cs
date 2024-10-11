@@ -45,23 +45,73 @@ namespace mainForm
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            if (radioButtonDF.Checked)
+            if (string.IsNullOrEmpty(textBox4.Text) || !int.TryParse(textBox4.Text, out _))
             {
-
+                MessageBox.Show("Enter a valid ID!", "Error");
+                return;
             }
             if (radioButtonDF2.Checked)
             {
-
+                var employee = _db.Employees.FirstOrDefault(e => e.Id == int.Parse(textBox4.Text));
+                if (employee == null)
+                {
+                    MessageBox.Show("Employee not found!", "Error");
+                    return;
+                }
+                _db.Employees.Remove(employee);
+                _db.SaveChanges();
             }
-            if(!radioButtonDF.Checked||!radioButtonDF2.Checked)
+            if (radioButtonDF.Checked)
             {
-                MessageBox.Show("Select option!", "Error");
+                var department = _db.Departments.FirstOrDefault(d => d.Id == int.Parse(textBox4.Text));
+                if (department == null)
+                {
+                    MessageBox.Show("Department not found!", "Error");
+                    return;
+                }
+                _db.Departments.Remove(department);
+                _db.SaveChanges();
+            }
+            if (!radioButtonDF.Checked && !radioButtonDF2.Checked)
+            {
+                MessageBox.Show("Select an option!", "Error");
             }
         }
 
         private void findButton_Click(object sender, EventArgs e)
         {
-
+            if (string.IsNullOrEmpty(textBox4.Text) || !int.TryParse(textBox4.Text, out _))
+            {
+                MessageBox.Show("Enter a valid ID!", "Error");
+                return;
+            }
+            if (radioButtonDF2.Checked)
+            {
+                var employee = _db.Employees.FirstOrDefault(e => e.Id == int.Parse(textBox4.Text));
+                if (employee == null)
+                {
+                    MessageBox.Show("Employee not found!", "Error");
+                    return;
+                }
+                dataGridView1.DataSource = new List<Employee> { employee };
+            }
+            if (radioButtonDF.Checked) 
+            {
+                var department = _db.Departments.FirstOrDefault(d => d.Id == int.Parse(textBox4.Text));
+                if (department == null)
+                {
+                    MessageBox.Show("Department not found!", "Error");
+                    return;
+                }
+                var employees = _db.Employees
+                    .Where(e => e.DepartmentId == department.Id)
+                    .ToList();
+                dataGridView1.DataSource = department;
+            }
+            if (!radioButtonDF.Checked && !radioButtonDF2.Checked)
+            {
+                MessageBox.Show("Select an option!", "Error");
+            }
         }
 
         private void addButton_Click(object sender, EventArgs e)
