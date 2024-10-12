@@ -157,6 +157,8 @@ namespace mainForm
                     Department = selectedDepartment
                 };
                 _db.Employees.Add(employee);
+                selectedDepartment.Employees.Add(employee);
+                selectedDepartment.UpdateEmployeeAmount();
                 _db.SaveChanges();
             }
             NameTextBox.Text = "";

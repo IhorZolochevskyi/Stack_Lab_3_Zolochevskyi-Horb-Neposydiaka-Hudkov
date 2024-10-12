@@ -17,7 +17,7 @@ namespace ClassLib
 
         public void UpdateEmployeeAmount()
         {
-            EmployeeAmount = Employees.Count;
+            EmployeeAmount = Employees.Count/2;
         }
     }
 }
