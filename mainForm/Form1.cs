@@ -136,23 +136,27 @@ namespace mainForm
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            if (NameTextBox == null || NameTextBox.Text == "")
+            if (employeeRadioButton.Checked)
             {
-                MessageBox.Show("Enter a name!", "Error");
-                return;
-            }
+                if (NameTextBox == null || NameTextBox.Text == "")
+                {
+                    MessageBox.Show("Enter a name!", "Error");
+                    return;
+                }
 
-            if (intTextBox == null || intTextBox.Text == "" || !int.TryParse(intTextBox.Text, out int age) || age < 18)
-            {
-                MessageBox.Show("Enter an correct age!", "Error");
-                return;
-            }
+                if (intTextBox == null || intTextBox.Text == "" || !int.TryParse(intTextBox.Text, out int age) || age < 18 || age > 100)
+                {
+                    MessageBox.Show("Enter an correct age!", "Error");
+                    return;
+                }
 
-            if (textBox3 == null || textBox3.Text == "")
-            {
-                MessageBox.Show("Enter an correct expirience!", "Error");
-                return;
+                if (textBox3 == null || textBox3.Text == "" || !int.TryParse(textBox3.Text, out int expirience) || expirience > age - 16 || expirience <0)
+                {
+                    MessageBox.Show("Enter an correct experience!", "Error");
+                    return;
+                }
             }
+            
             if (departmenRadioButton.Checked)
             {
                 Department department = new Department { Name = NameTextBox.Text };
@@ -181,6 +185,24 @@ namespace mainForm
             intTextBox.Text = "";
             textBox3.Text = "";
             MessageBox.Show("Success!");
+
+            if (departmenRadioButton.Checked)
+            {
+                var departments = _db.Departments.ToList();
+                dataGridView1.DataSource = departments;
+            }
+            else
+            {
+                var employees = _db.Employees.Select(e => new
+                {
+                    e.Id,
+                    e.Name,
+                    e.Age,
+                    e.Expirience,
+                    DepartmentName = e.Department.Name
+                }).ToList();
+                dataGridView1.DataSource = employees;
+            }
         }
 
         private void departmenRadioButton_CheckedChanged(object sender, EventArgs e)
