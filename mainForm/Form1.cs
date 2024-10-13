@@ -136,7 +136,23 @@ namespace mainForm
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            if (NameTextBox == null || NameTextBox.Text == "")
+            {
+                MessageBox.Show("Enter a name!", "Error");
+                return;
+            }
 
+            if (intTextBox == null || intTextBox.Text == "" || !int.TryParse(intTextBox.Text, out int age) || age < 18)
+            {
+                MessageBox.Show("Enter an correct age!", "Error");
+                return;
+            }
+
+            if (textBox3 == null || textBox3.Text == "")
+            {
+                MessageBox.Show("Enter an correct expirience!", "Error");
+                return;
+            }
             if (departmenRadioButton.Checked)
             {
                 Department department = new Department { Name = NameTextBox.Text };

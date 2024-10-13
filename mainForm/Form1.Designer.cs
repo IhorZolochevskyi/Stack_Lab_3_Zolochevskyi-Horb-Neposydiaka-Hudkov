@@ -54,54 +54,66 @@
             // 
             dataGridLabel.AutoSize = true;
             dataGridLabel.Font = new Font("Segoe UI", 15F);
-            dataGridLabel.Location = new Point(270, 9);
+            dataGridLabel.Location = new Point(386, 15);
+            dataGridLabel.Margin = new Padding(4, 0, 4, 0);
             dataGridLabel.Name = "dataGridLabel";
-            dataGridLabel.Size = new Size(41, 28);
+            dataGridLabel.Size = new Size(62, 41);
             dataGridLabel.TabIndex = 0;
             dataGridLabel.Text = "List";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 40);
+            dataGridView1.Location = new Point(17, 67);
+            dataGridView1.Margin = new Padding(4, 5, 4, 5);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(550, 348);
+            dataGridView1.RowHeadersWidth = 62;
+            dataGridView1.Size = new Size(786, 580);
             dataGridView1.TabIndex = 1;
             // 
             // NameTextBox
             // 
-            NameTextBox.Location = new Point(590, 71);
+            NameTextBox.Location = new Point(843, 118);
+            NameTextBox.Margin = new Padding(4, 5, 4, 5);
             NameTextBox.Name = "NameTextBox";
-            NameTextBox.Size = new Size(100, 23);
+            NameTextBox.PlaceholderText = "Введіть ім'я";
+            NameTextBox.Size = new Size(141, 31);
             NameTextBox.TabIndex = 2;
             // 
             // intTextBox
             // 
-            intTextBox.Location = new Point(590, 110);
+            intTextBox.Location = new Point(843, 183);
+            intTextBox.Margin = new Padding(4, 5, 4, 5);
             intTextBox.Name = "intTextBox";
-            intTextBox.Size = new Size(100, 23);
+            intTextBox.PlaceholderText = "Введіть вік";
+            intTextBox.Size = new Size(141, 31);
             intTextBox.TabIndex = 3;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(590, 150);
+            textBox3.Location = new Point(843, 250);
+            textBox3.Margin = new Padding(4, 5, 4, 5);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(100, 23);
+            textBox3.PlaceholderText = "Введіть стаж";
+            textBox3.Size = new Size(141, 31);
             textBox3.TabIndex = 4;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(712, 71);
+            textBox4.Location = new Point(1017, 118);
+            textBox4.Margin = new Padding(4, 5, 4, 5);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
+            textBox4.PlaceholderText = "Введіть індекс";
+            textBox4.Size = new Size(141, 31);
             textBox4.TabIndex = 5;
             // 
             // departmenRadioButton
             // 
             departmenRadioButton.AutoSize = true;
-            departmenRadioButton.Location = new Point(604, 227);
+            departmenRadioButton.Location = new Point(863, 378);
+            departmenRadioButton.Margin = new Padding(4, 5, 4, 5);
             departmenRadioButton.Name = "departmenRadioButton";
-            departmenRadioButton.Size = new Size(88, 19);
+            departmenRadioButton.Size = new Size(132, 29);
             departmenRadioButton.TabIndex = 6;
             departmenRadioButton.TabStop = true;
             departmenRadioButton.Text = "Department";
@@ -111,9 +123,10 @@
             // employeeRadioButton
             // 
             employeeRadioButton.AutoSize = true;
-            employeeRadioButton.Location = new Point(604, 252);
+            employeeRadioButton.Location = new Point(863, 420);
+            employeeRadioButton.Margin = new Padding(4, 5, 4, 5);
             employeeRadioButton.Name = "employeeRadioButton";
-            employeeRadioButton.Size = new Size(77, 19);
+            employeeRadioButton.Size = new Size(115, 29);
             employeeRadioButton.TabIndex = 7;
             employeeRadioButton.TabStop = true;
             employeeRadioButton.Text = "Employee";
@@ -122,9 +135,10 @@
             // 
             // addButton
             // 
-            addButton.Location = new Point(590, 289);
+            addButton.Location = new Point(843, 482);
+            addButton.Margin = new Padding(4, 5, 4, 5);
             addButton.Name = "addButton";
-            addButton.Size = new Size(100, 35);
+            addButton.Size = new Size(143, 58);
             addButton.TabIndex = 8;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = true;
@@ -132,9 +146,10 @@
             // 
             // DeleteButton
             // 
-            DeleteButton.Location = new Point(712, 183);
+            DeleteButton.Location = new Point(1017, 305);
+            DeleteButton.Margin = new Padding(4, 5, 4, 5);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(100, 29);
+            DeleteButton.Size = new Size(143, 48);
             DeleteButton.TabIndex = 9;
             DeleteButton.Text = "Delete";
             DeleteButton.UseVisualStyleBackColor = true;
@@ -144,9 +159,10 @@
             // 
             inputLabel.AutoSize = true;
             inputLabel.Font = new Font("Segoe UI", 12F);
-            inputLabel.Location = new Point(590, 40);
+            inputLabel.Location = new Point(843, 67);
+            inputLabel.Margin = new Padding(4, 0, 4, 0);
             inputLabel.Name = "inputLabel";
-            inputLabel.Size = new Size(94, 21);
+            inputLabel.Size = new Size(143, 32);
             inputLabel.TabIndex = 10;
             inputLabel.Text = "Enter values";
             // 
@@ -154,19 +170,21 @@
             // 
             indexLabel.AutoSize = true;
             indexLabel.Font = new Font("Segoe UI", 12F);
-            indexLabel.Location = new Point(715, 40);
+            indexLabel.Location = new Point(1021, 67);
+            indexLabel.Margin = new Padding(4, 0, 4, 0);
             indexLabel.Name = "indexLabel";
             indexLabel.RightToLeft = RightToLeft.No;
-            indexLabel.Size = new Size(87, 21);
+            indexLabel.Size = new Size(134, 32);
             indexLabel.TabIndex = 11;
             indexLabel.Text = "Enter index";
             // 
             // radioButtonDF
             // 
             radioButtonDF.AutoSize = true;
-            radioButtonDF.Location = new Point(724, 114);
+            radioButtonDF.Location = new Point(1034, 190);
+            radioButtonDF.Margin = new Padding(4, 5, 4, 5);
             radioButtonDF.Name = "radioButtonDF";
-            radioButtonDF.Size = new Size(88, 19);
+            radioButtonDF.Size = new Size(132, 29);
             radioButtonDF.TabIndex = 13;
             radioButtonDF.TabStop = true;
             radioButtonDF.Text = "Department";
@@ -175,9 +193,10 @@
             // radioButtonDF2
             // 
             radioButtonDF2.AutoSize = true;
-            radioButtonDF2.Location = new Point(724, 139);
+            radioButtonDF2.Location = new Point(1034, 232);
+            radioButtonDF2.Margin = new Padding(4, 5, 4, 5);
             radioButtonDF2.Name = "radioButtonDF2";
-            radioButtonDF2.Size = new Size(77, 19);
+            radioButtonDF2.Size = new Size(115, 29);
             radioButtonDF2.TabIndex = 14;
             radioButtonDF2.TabStop = true;
             radioButtonDF2.Text = "Employee";
@@ -185,9 +204,10 @@
             // 
             // findButton
             // 
-            findButton.Location = new Point(712, 227);
+            findButton.Location = new Point(1017, 378);
+            findButton.Margin = new Padding(4, 5, 4, 5);
             findButton.Name = "findButton";
-            findButton.Size = new Size(100, 29);
+            findButton.Size = new Size(143, 48);
             findButton.TabIndex = 15;
             findButton.Text = "Find";
             findButton.UseVisualStyleBackColor = true;
@@ -195,9 +215,10 @@
             // 
             // departmentShowButton
             // 
-            departmentShowButton.Location = new Point(12, 418);
+            departmentShowButton.Location = new Point(17, 697);
+            departmentShowButton.Margin = new Padding(4, 5, 4, 5);
             departmentShowButton.Name = "departmentShowButton";
-            departmentShowButton.Size = new Size(260, 23);
+            departmentShowButton.Size = new Size(371, 38);
             departmentShowButton.TabIndex = 16;
             departmentShowButton.Text = "Department";
             departmentShowButton.UseVisualStyleBackColor = true;
@@ -205,9 +226,10 @@
             // 
             // employeeShowButton
             // 
-            employeeShowButton.Location = new Point(320, 418);
+            employeeShowButton.Location = new Point(457, 697);
+            employeeShowButton.Margin = new Padding(4, 5, 4, 5);
             employeeShowButton.Name = "employeeShowButton";
-            employeeShowButton.Size = new Size(242, 23);
+            employeeShowButton.Size = new Size(346, 38);
             employeeShowButton.TabIndex = 17;
             employeeShowButton.Text = "Employee";
             employeeShowButton.UseVisualStyleBackColor = true;
@@ -216,18 +238,20 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(590, 189);
+            comboBox1.Location = new Point(843, 315);
+            comboBox1.Margin = new Padding(4, 5, 4, 5);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(100, 23);
+            comboBox1.Size = new Size(141, 33);
             comboBox1.TabIndex = 18;
             // 
             // ClearButton
             // 
             ClearButton.BackColor = SystemColors.InfoText;
             ClearButton.ForeColor = SystemColors.ButtonFace;
-            ClearButton.Location = new Point(694, 384);
+            ClearButton.Location = new Point(991, 640);
+            ClearButton.Margin = new Padding(4, 5, 4, 5);
             ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(158, 76);
+            ClearButton.Size = new Size(226, 127);
             ClearButton.TabIndex = 19;
             ClearButton.Text = "CLEAR DATABASE";
             ClearButton.UseVisualStyleBackColor = false;
@@ -235,9 +259,9 @@
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(871, 466);
+            ClientSize = new Size(1244, 777);
             Controls.Add(ClearButton);
             Controls.Add(comboBox1);
             Controls.Add(employeeShowButton);
@@ -257,6 +281,7 @@
             Controls.Add(NameTextBox);
             Controls.Add(dataGridView1);
             Controls.Add(dataGridLabel);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
