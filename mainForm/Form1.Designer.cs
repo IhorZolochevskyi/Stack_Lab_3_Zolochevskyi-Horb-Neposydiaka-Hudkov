@@ -54,7 +54,7 @@
             // 
             dataGridLabel.AutoSize = true;
             dataGridLabel.Font = new Font("Segoe UI", 15F);
-            dataGridLabel.Location = new Point(152, 27);
+            dataGridLabel.Location = new Point(270, 9);
             dataGridLabel.Name = "dataGridLabel";
             dataGridLabel.Size = new Size(41, 28);
             dataGridLabel.TabIndex = 0;
@@ -63,35 +63,35 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 58);
+            dataGridView1.Location = new Point(12, 40);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(343, 200);
+            dataGridView1.Size = new Size(550, 348);
             dataGridView1.TabIndex = 1;
             // 
             // NameTextBox
             // 
-            NameTextBox.Location = new Point(384, 58);
+            NameTextBox.Location = new Point(590, 71);
             NameTextBox.Name = "NameTextBox";
             NameTextBox.Size = new Size(100, 23);
             NameTextBox.TabIndex = 2;
             // 
             // intTextBox
             // 
-            intTextBox.Location = new Point(384, 97);
+            intTextBox.Location = new Point(590, 110);
             intTextBox.Name = "intTextBox";
             intTextBox.Size = new Size(100, 23);
             intTextBox.TabIndex = 3;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(384, 137);
+            textBox3.Location = new Point(590, 150);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(100, 23);
             textBox3.TabIndex = 4;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(506, 58);
+            textBox4.Location = new Point(712, 71);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(100, 23);
             textBox4.TabIndex = 5;
@@ -99,7 +99,7 @@
             // departmenRadioButton
             // 
             departmenRadioButton.AutoSize = true;
-            departmenRadioButton.Location = new Point(385, 214);
+            departmenRadioButton.Location = new Point(604, 227);
             departmenRadioButton.Name = "departmenRadioButton";
             departmenRadioButton.Size = new Size(88, 19);
             departmenRadioButton.TabIndex = 6;
@@ -111,7 +111,7 @@
             // employeeRadioButton
             // 
             employeeRadioButton.AutoSize = true;
-            employeeRadioButton.Location = new Point(385, 239);
+            employeeRadioButton.Location = new Point(604, 252);
             employeeRadioButton.Name = "employeeRadioButton";
             employeeRadioButton.Size = new Size(77, 19);
             employeeRadioButton.TabIndex = 7;
@@ -122,9 +122,9 @@
             // 
             // addButton
             // 
-            addButton.Location = new Point(384, 264);
+            addButton.Location = new Point(590, 289);
             addButton.Name = "addButton";
-            addButton.Size = new Size(75, 23);
+            addButton.Size = new Size(100, 35);
             addButton.TabIndex = 8;
             addButton.Text = "Add";
             addButton.UseVisualStyleBackColor = true;
@@ -132,9 +132,9 @@
             // 
             // DeleteButton
             // 
-            DeleteButton.Location = new Point(518, 151);
+            DeleteButton.Location = new Point(712, 183);
             DeleteButton.Name = "DeleteButton";
-            DeleteButton.Size = new Size(75, 23);
+            DeleteButton.Size = new Size(100, 29);
             DeleteButton.TabIndex = 9;
             DeleteButton.Text = "Delete";
             DeleteButton.UseVisualStyleBackColor = true;
@@ -144,7 +144,7 @@
             // 
             inputLabel.AutoSize = true;
             inputLabel.Font = new Font("Segoe UI", 12F);
-            inputLabel.Location = new Point(384, 27);
+            inputLabel.Location = new Point(590, 40);
             inputLabel.Name = "inputLabel";
             inputLabel.Size = new Size(94, 21);
             inputLabel.TabIndex = 10;
@@ -154,7 +154,7 @@
             // 
             indexLabel.AutoSize = true;
             indexLabel.Font = new Font("Segoe UI", 12F);
-            indexLabel.Location = new Point(509, 27);
+            indexLabel.Location = new Point(715, 40);
             indexLabel.Name = "indexLabel";
             indexLabel.RightToLeft = RightToLeft.No;
             indexLabel.Size = new Size(87, 21);
@@ -164,7 +164,7 @@
             // radioButtonDF
             // 
             radioButtonDF.AutoSize = true;
-            radioButtonDF.Location = new Point(518, 101);
+            radioButtonDF.Location = new Point(724, 114);
             radioButtonDF.Name = "radioButtonDF";
             radioButtonDF.Size = new Size(88, 19);
             radioButtonDF.TabIndex = 13;
@@ -175,7 +175,7 @@
             // radioButtonDF2
             // 
             radioButtonDF2.AutoSize = true;
-            radioButtonDF2.Location = new Point(519, 126);
+            radioButtonDF2.Location = new Point(724, 139);
             radioButtonDF2.Name = "radioButtonDF2";
             radioButtonDF2.Size = new Size(77, 19);
             radioButtonDF2.TabIndex = 14;
@@ -185,9 +185,9 @@
             // 
             // findButton
             // 
-            findButton.Location = new Point(518, 180);
+            findButton.Location = new Point(712, 227);
             findButton.Name = "findButton";
-            findButton.Size = new Size(75, 23);
+            findButton.Size = new Size(100, 29);
             findButton.TabIndex = 15;
             findButton.Text = "Find";
             findButton.UseVisualStyleBackColor = true;
@@ -195,9 +195,9 @@
             // 
             // departmentShowButton
             // 
-            departmentShowButton.Location = new Point(37, 264);
+            departmentShowButton.Location = new Point(12, 418);
             departmentShowButton.Name = "departmentShowButton";
-            departmentShowButton.Size = new Size(101, 23);
+            departmentShowButton.Size = new Size(260, 23);
             departmentShowButton.TabIndex = 16;
             departmentShowButton.Text = "Department";
             departmentShowButton.UseVisualStyleBackColor = true;
@@ -205,9 +205,9 @@
             // 
             // employeeShowButton
             // 
-            employeeShowButton.Location = new Point(205, 264);
+            employeeShowButton.Location = new Point(320, 418);
             employeeShowButton.Name = "employeeShowButton";
-            employeeShowButton.Size = new Size(97, 23);
+            employeeShowButton.Size = new Size(242, 23);
             employeeShowButton.TabIndex = 17;
             employeeShowButton.Text = "Employee";
             employeeShowButton.UseVisualStyleBackColor = true;
@@ -216,7 +216,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(384, 180);
+            comboBox1.Location = new Point(590, 189);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(100, 23);
             comboBox1.TabIndex = 18;
@@ -225,9 +225,9 @@
             // 
             ClearButton.BackColor = SystemColors.InfoText;
             ClearButton.ForeColor = SystemColors.ButtonFace;
-            ClearButton.Location = new Point(488, 264);
+            ClearButton.Location = new Point(694, 384);
             ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(118, 23);
+            ClearButton.Size = new Size(158, 76);
             ClearButton.TabIndex = 19;
             ClearButton.Text = "CLEAR DATABASE";
             ClearButton.UseVisualStyleBackColor = false;
@@ -237,7 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(618, 312);
+            ClientSize = new Size(871, 466);
             Controls.Add(ClearButton);
             Controls.Add(comboBox1);
             Controls.Add(employeeShowButton);

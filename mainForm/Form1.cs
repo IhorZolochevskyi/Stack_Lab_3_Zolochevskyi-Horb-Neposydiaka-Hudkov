@@ -80,7 +80,6 @@ namespace mainForm
                 }
                 _db.Employees.Remove(employee);
                 _db.SaveChanges();
-
                 dataGridView1.DataSource = null;
                 dataGridView1.Refresh();
                 var employees = _db.Employees.Select(e => new
