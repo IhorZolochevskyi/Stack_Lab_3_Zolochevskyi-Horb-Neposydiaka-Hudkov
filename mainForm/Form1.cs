@@ -159,6 +159,12 @@ namespace mainForm
             
             if (departmenRadioButton.Checked)
             {
+                if (NameTextBox == null || NameTextBox.Text == "")
+                {
+                    MessageBox.Show("Enter a department name!", "Error");
+                    return;
+                }
+
                 Department department = new Department { Name = NameTextBox.Text };
                 _db.Departments.Add(department);
                 _db.SaveChanges();
