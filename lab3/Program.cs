@@ -8,6 +8,7 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
+            // Код для тестування роботи з базою даних
             ////SQLitePCL.Batteries.Init();
             //using (DB db = new DB())
             //{

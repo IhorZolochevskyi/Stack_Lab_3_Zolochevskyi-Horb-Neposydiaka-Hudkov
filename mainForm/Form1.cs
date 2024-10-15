@@ -159,6 +159,13 @@ namespace mainForm
 
             if (departmenRadioButton.Checked)
             {
+
+                if (NameTextBox == null || NameTextBox.Text == "")
+                {
+                    MessageBox.Show("Enter a department name!", "Error");
+                    return;
+                }
+
                 Department department = new Department { Name = NameTextBox.Text };
                 _db.Departments.Add(department);
                 _db.SaveChanges();
@@ -227,16 +234,16 @@ namespace mainForm
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
-            MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
-            if (MessageBox.Show("ARE U SURE?!", "Clear database", messageBoxButtons) == DialogResult.No)
-            {
-                return;
-            }
-            MessageBox.Show("Database cleared!");
-            _db.ClearDatabase();
+                MessageBoxButtons messageBoxButtons = MessageBoxButtons.YesNo;
+                if (MessageBox.Show("ARE U SURE?!", "Clear database", messageBoxButtons) == DialogResult.No)
+                {
+                    return;
+                }
+                MessageBox.Show("Database cleared!");
+                _db.ClearDatabase();
 
-            dataGridView1.DataSource = null;
-            dataGridView1.Refresh();
+                dataGridView1.DataSource = null;
+                dataGridView1.Refresh();
         }
     }
 }
