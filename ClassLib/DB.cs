@@ -30,9 +30,9 @@ namespace ClassLib
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>()
-                .HasOne(e => e.Department)   // Один работник имеет один департамент
-                .WithMany(d => d.Employees)  // Один департамент имеет много работников
-                .HasForeignKey(e => e.DepartmentId);  // Внешний ключ в таблице работников
+                .HasOne(e => e.Department)
+                .WithMany(d => d.Employees)
+                .HasForeignKey(e => e.DepartmentId);
         }
     }
 }
