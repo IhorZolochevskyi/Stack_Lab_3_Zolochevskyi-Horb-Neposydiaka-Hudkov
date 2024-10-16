@@ -136,6 +136,12 @@ namespace mainForm
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            if (!employeeRadioButton.Checked && !departmenRadioButton.Checked)
+            {
+                MessageBox.Show("Please select Employee or Department!", "Error");
+                return;
+            }
+
             if (employeeRadioButton.Checked)
             {
                 if (NameTextBox == null || NameTextBox.Text == "")
