@@ -103,6 +103,7 @@
             textBox4.Location = new Point(609, 70);
             textBox4.Margin = new Padding(4, 5, 4, 5);
             textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "Введіть індекс";
             textBox4.Size = new Size(141, 31);
             textBox4.TabIndex = 5;
             // 
