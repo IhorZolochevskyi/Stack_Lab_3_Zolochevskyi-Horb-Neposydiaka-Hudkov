@@ -8,16 +8,17 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
+            // Код для тестування роботи з базою даних
             ////SQLitePCL.Batteries.Init();
             //using (DB db = new DB())
             //{
-                
+
             //    Department NTU_KHPI = new Department { Name = "NTU KHPI"};
-            //    Employee Yehor = new Employee { Name = "Yehor Neposydiaka", Age = 19, Expirience = 3, Department = NTU_KHPI};
-            //    db.Employees.Add(Yehor);
+            //    Employee Yehor = new Employee { Name = "Ivan Horb", Age = 19, Expirience = 3, Department = NTU_KHPI};
+            //    db.Employees.Add(Ivan);
             //    db.Departments.Add(NTU_KHPI);
             //    db.SaveChanges();
-                
+
             //    Console.WriteLine("Success added");
 
             //    var emp = db.Employees.ToList();
