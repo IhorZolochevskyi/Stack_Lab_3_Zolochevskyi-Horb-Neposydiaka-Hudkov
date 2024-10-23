@@ -9,26 +9,33 @@ namespace Lab3
         static void Main(string[] args)
         {
             // Код для тестування роботи з базою даних
+            DatabaseTester.TestDatabase();
+        }
+    }
+
+    class DatabaseTester
+    {
+        public static void TestDatabase()
+        {
             ////SQLitePCL.Batteries.Init();
-            //using (DB db = new DB())
-            //{
+            using (DB db = new DB())
+            {
+                Department NTU_KHPI = new Department { Name = "NTU KHPI" };
+                Employee Yehor = new Employee { Name = "Ivan Horb", Age = 19, Expirience = 3, Department = NTU_KHPI };
 
-            //    Department NTU_KHPI = new Department { Name = "NTU KHPI"};
-            //    Employee Yehor = new Employee { Name = "Ivan Horb", Age = 19, Expirience = 3, Department = NTU_KHPI};
-            //    db.Employees.Add(Ivan);
-            //    db.Departments.Add(NTU_KHPI);
-            //    db.SaveChanges();
+                db.Employees.Add(Yehor);
+                db.Departments.Add(NTU_KHPI);
+                db.SaveChanges();
 
-            //    Console.WriteLine("Success added");
+                Console.WriteLine("Success added");
 
-            //    var emp = db.Employees.ToList();
-            //    Console.WriteLine("List of objects:");
-            //    foreach (Employee u in emp)
-            //    {
-            //        Console.WriteLine($"{u.Name}   {u.Id}    {u.Age}");
-
-            //    }
-            //}
+                var emp = db.Employees.ToList();
+                Console.WriteLine("List of objects:");
+                foreach (Employee u in emp)
+                {
+                    Console.WriteLine($"{u.Name}   {u.Id}    {u.Age}");
+                }
+            }
         }
     }
 }
